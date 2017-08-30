@@ -1,10 +1,5 @@
 import { Injectable, ElementRef, EventEmitter } from '@angular/core';
 
-export interface IDropdown {
-  id: string;
-  clicado: EventEmitter<void>;
-}
-
 export class DropdownService {
   private dropdowns = {};
   constructor() {}
