@@ -3,7 +3,6 @@ import {
   HostBinding,
   OnInit,
   Input,
-  Renderer2,
   OnDestroy
 } from '@angular/core';
 import { DropdownService } from './dropdown.service';
@@ -16,7 +15,7 @@ export class DropdownMenuDirective implements OnInit, OnDestroy {
   @Input() id: string;
   @HostBinding('class.show') show: boolean;
   private subscription: Subscription;
-  constructor(private service: DropdownService, private renderer: Renderer2) {}
+  constructor(private service: DropdownService) {}
 
   ngOnInit() {
     this.subscription = this.service.register(this.id).subscribe(() => {
